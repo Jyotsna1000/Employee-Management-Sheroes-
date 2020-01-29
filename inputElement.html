@@ -1,0 +1,115 @@
+<html>
+<head>
+	<title>Edit Employe Details</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+	<script src="popper.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<style>
+	body{
+		background-image: url("images/one.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	</style>
+
+</head>
+<body>
+	<?php include('json_edit.php'); ?>
+	<form class="form-horizontal"  method="POST" enctype="multipart/form-data" action="json_add_post.php">
+			<table class="table">
+				<tr>
+					<td colspan="5"><h2>Employee Detail Form</h2>
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td><b>Personal Details</b></td>
+				</tr>
+				<tr>
+					<td>Name:</td>
+					<td>
+						<select>
+						<option>Mr.</option>
+						<option>Ms.</option>
+					</select>
+				    </td>
+				    <td><input type="text" name="firstName" placeholder="Name" required  value="<?php echo !empty($arr->firstName)?$arr->firstName:''?>"></td>
+				    <td><input type="text" name="middleName" placeholder="Middlename"></td>
+				    <td><input type="text" name="lastName" placeholder="lastname" required></td>
+				</tr>
+				<tr>
+			    	<td>Gender:</td>
+			    	<td><input type="radio" name="gender" value="male" required>Male</td>
+			    	<td><input type="radio" name="gender" value="female" required>Female</td>
+			    </tr>
+			    <tr>
+			    	<td>BirthDate:</td>
+			    	<td><input type="date" name="birthDate" required></td>
+			    </tr>
+			    <tr>
+			    	<td rowspan="2">Address:</td>
+			    	<td colspan="2"><input type="text" size="40" name="address" placeholder="Address Line1" required></td>
+			    	<td colspan="2"><input type="text" size="40" name="address2" placeholder="Address line2"></td>
+			    </tr>
+			    <tr align="left">
+			    	<td><input type="text" name="district" placeholder="district" required></td>
+			    	<td><input type="text" name="state" placeholder="state" required></td>
+			    	<td><input type="text" name="pincode" pattern="[0-9]{6}" placeholder="pincode" maxlength="6" size="8"></td>
+			    </tr>
+			    <tr>
+			    	<td>Nationality:</td>
+			    	<td><input type="radio" name="nation"> Indian</td>
+			    	<td><input type="radio" name="nation"> Other</td>
+			    </tr>
+			    <tr>
+			    	<td><b>Employement Detail</b></td>
+			    </tr>
+			    <tr>
+			    	<td>Job Title</td>
+			    	<td><input type="text" name="jobTitle" required></td>
+			    </tr>
+			    <tr>
+			    	<td>Department</td>
+			    	<td><select name="department" required>
+			    		<option>Information Technology</option>
+			    		<option>Operations</option>
+			    		<option>Product</option>
+			    	    </select></td>
+			    </tr>
+			    <tr>
+			    	<td>Commnecement Date:</td>
+			    	<td><input type="date" name="commenceDate" required></td>
+			    </tr>
+			    <tr>
+			    	<td>Employement status</td>
+			    	<td><input type="radio" name="jobStatus" value="FTE" required> Full-Time</td>
+			    	<td><input type="radio" name="jobStatus" value="Part-time" required>Part-Time</td>
+			    	<td><input type="radio" name="jobStatus" value="Temporary" required>Temporary</td>
+			    	<td><input type="radio" name="jobStatus" value="casual" required>Casual</td>
+			    </tr>
+			    <tr>
+			    	<td><b>Banking Details</b></td>
+			    </tr>
+			    <tr>
+			    	<td>Bank:</td>
+			    	<td><input type="text" name="bankName" placeholder="Bank name" required></td>
+			    	<td><input type="text" name="bankBranch" placeholder="Bank Branch" required></td>
+			    </tr>
+			    <tr>
+			    	<td>Account Number:</td>
+			    	<td><input type="text" name="accNo" required></td>
+			    </tr>
+
+			    <tr>
+				<td colspan="2"><input type="submit" class="btn btn-outline-danger" name="submit">
+				</td>
+			    </tr>
+		</table> 	
+		</form>
+	
+
+	
+</body>
+</html>

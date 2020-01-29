@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Delete Employe Details</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+	<script src="popper.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<style>
+	body{
+		background-image: url("images/one.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	</style>
+
+</head>
+<body>
+
+	<div align="center">
+	<h1>Delete the employee detail</h1>
+	<div class="card"  style="width: 20rem;">
+		<form class="form-horizontal" action="json_delete.php" method="POST" enctype="multipart/form-data">
+                    <img class="card-img-top" src="images/del.svg" alt="Card image">
+                    <div class="card-body">
+                    	<h5 class="card-title">Enter Employee Id:</h5>
+                    	<p class="card-text"><input type="text" name="id" required></p>
+                    	  <input type="submit" name="submit" class="btn btn-outline-danger">
+                    </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
