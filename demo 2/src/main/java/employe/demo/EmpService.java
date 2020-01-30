@@ -39,53 +39,37 @@ public class EmpService {
     /**
      *
      * @return List of Chart object
-     * This function returns the number of employees joined in last 5 years.
+     * This function returns the numberc of employees joined in last 5 years.
      */
+    public List<Chart> getlast5() {
 
-        public List<Chart> getlast5() {
-        List<Employee> emplist=new ArrayList<>();
-        empRepository.findAll()
-                .forEach(emplist::add);
-        List<Chart> chart=new ArrayList<>();
+        List<Chart> chart = new ArrayList<>();
+        LocalDate now = LocalDate.now();
+        LocalDate earlier = now.minusYears(5);
+        int intvalue;
+        for (int count = 0; count < 5; count++) {
+            Chart<Integer> object = new Chart<Integer>();
+            object.setlabel(earlier.plusYears(count).getYear());
+            Long empleft = empRepository.findEmployesLeft(earlier.plusYears(count).getYear());
 
-        LocalDate now=LocalDate.now();
-        LocalDate earlier= now.minusYears(5);
-        for(int count=0;count<5;count++)
-        {
-            Chart <Integer>ob=new Chart<Integer>();
-            ob.setlabel(earlier.plusYears(count).getYear());
-            chart.add(ob);
-        }
+            if (empleft != null)
+                intvalue = empleft.intValue();
+            else intvalue = 0;
 
-        Map<Integer,Integer>map=new HashMap<>();
-        for(Iterator<Employee> itr=emplist.iterator();itr.hasNext();) {
-            Date date =itr.next().getCommenceDate();
-            Calendar cal= Calendar.getInstance();
-            cal.setTime(date);
+            object.sety(intvalue);
 
-            int s = cal.get(Calendar.YEAR);
-            if(map.containsKey(s)) {
-                int n = map.get(s);
-                n++;
-                map.replace(s,n);
-            }else {map.put(s,1);}
-        }
-
-        int chartCount=0;
-        while(chartCount<chart.size())
-        {
-            Chart <Integer>chart1=chart.get(chartCount);
-
-            int x=chart1.getlabel();
-            if(map.containsKey(x)) {
-                int n = map.get(x);
-                chart1.sety(n);
-                chart.set(chartCount,chart1);
-            }
-             chartCount++;
+            chart.add(object);
         }
         return chart;
     }
+
+    /**
+     *
+     * @return List of Chart object
+     * This function returns the number of employees joined in last 5 years.
+     */
+
+
     public List<Employee> searchlist(String name) {
         List<Employee> emplist=new ArrayList<>();
         empRepository.findAll()
