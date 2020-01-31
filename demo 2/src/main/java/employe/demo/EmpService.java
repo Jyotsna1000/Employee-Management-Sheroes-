@@ -39,7 +39,7 @@ public class EmpService {
     /**
      *
      * @return List of Chart object
-     * This function returns the numberc of employees joined in last 5 years.
+     * This function returns the number of employees joined in last 5 years.
      */
     public List<Chart> getlast5() {
 
@@ -74,12 +74,7 @@ public class EmpService {
         List<Employee> emplist=new ArrayList<>();
         empRepository.findAll()
                 .forEach(emplist::add);
-
-        for(Iterator<Employee> itr=emplist.iterator();itr.hasNext();){
-            if(!itr.next().getFirstName().toLowerCase().contains(name.toLowerCase()))
-                itr.remove();
-        }
-
+        emplist.removeIf(emp->(!emp.getFirstName().toLowerCase().contains(name.toLowerCase())));
         return emplist;
     }
 
@@ -94,12 +89,7 @@ public class EmpService {
         List<Employee> emplist=new ArrayList<>();
         empRepository.findAll()
                 .forEach(emplist::add);
-
-        for(Iterator<Employee> itr=emplist.iterator();itr.hasNext();){
-            if(itr.next().getisAlive()==false)
-                itr.remove();
-        }
-
+        emplist.removeIf(emp->(!emp.getisAlive()));
         return emplist;
     }
 
