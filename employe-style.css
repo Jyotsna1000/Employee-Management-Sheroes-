@@ -1,0 +1,225 @@
+/* 
+
+ Tour Overlay Styles
+
+*/
+
+.tour-overlay{
+  background: #666;
+  opacity: 0.5;
+  z-index: 9996;
+  min-height: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.tour-stop{
+  position: relative;
+  z-index: 9998;
+  outline: 10px solid white;
+}
+
+.tour-stop-bg{
+  background: white;
+  position: fixed;
+  z-index: 9997;
+}
+
+.tour-message{
+  position: fixed;
+  z-index: 9997;
+  top: 0;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.26);
+}
+
+.tour-message .title{
+  font-size: 1.75em;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.tour-message__controls{
+  font-size: 1.5em;
+}
+
+/* 
+
+ Inconsequential Styles
+
+*/
+
+
+body {
+  margin: 0;
+}
+.row {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+}
+.col {
+  flex: 1 1 0;
+}
+
+
+a {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+.icon {
+  padding: 20px;
+  margin-left: 1 1 10em;
+}
+
+.h1 {
+  font-size: 2em;
+  margin: 0;
+  color: #be0032;
+}
+
+/* 
+
+ App
+
+*/
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 
+
+ Header
+
+*/
+
+.header {
+  background: #fff;
+  flex: 0 0 40px;
+  box-shadow: 0px 4px 10px #de5c4130;
+}
+
+.logo {
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #be0032;
+  display: inline-block;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  color: #b7b7b7;
+}
+
+.controls a:hover {
+  color: #de5c41;
+}
+
+.user-profile {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+
+/* 
+
+ Body
+
+*/
+
+.body {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+/* 
+
+ Sidebar
+
+*/
+.sidebar {
+  flex: 0 0 20%;
+  background-color: white;
+}
+
+.sidebar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: white;
+}
+
+.sidebar-nav a {
+  display: flex;
+  width: 80%;
+  padding: 20px;
+  text-align: left;
+  text-decoration: none;
+  color: #717171;
+}
+
+.sidebar-nav a:hover {
+  color: #B22222;
+}
+
+.sidebar-nav a span {
+  flex: 0 0 1;
+}
+
+.sidebar-nav a i {
+  flex: 0 0 100px;
+}
+
+.sidebar-nav .cta {
+  padding: 10px 20px;
+}
+
+a.primary {
+  display: block;
+  padding: 20px;
+  background: #be0032;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+a.primary:hover {
+  color: white;
+  background: #be0032;
+  text-decoration: none;
+}
+.main {
+  flex: 0 0 80%;
+  background: #f3efe7;
+}
+
+.main__content {
+  padding: 40px;
+}
+
+.title {
+  margin-bottom: 1em;
+}
